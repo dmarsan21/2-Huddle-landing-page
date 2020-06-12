@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Violet: hsl(257, 40%, 49%)
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('images/bg-desktop.svg');
+    background-repeat: no-repeat;
+    /* background-size: contain; */
+    background-size: cover;
+    background-color: var(--Violet);
+    /* height: 100vh; */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "logo logo" "mockups text-area" "social social" "footer footer";
+}
+
+.container .logo {
+    grid-area: logo;
+    margin-top: 3rem;
+    margin-left: 8rem;
+}
+
+.container .mockups {
+    grid-area: mockups;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.text h1,
+.text p {
+    color: white;
+}
+
+.container .text {
+    grid-area: text-area;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 4rem;
+}
+
+.text h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.text p {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-right: 13rem;
+    padding-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: flex;
+    background-color: white;
+    color: var(--Violet);
+    border-style: none;
+    margin: .5rem .8rem .5rem 0rem;
+    padding: 1.2rem 4rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+    margin-right: auto;
+    outline: none;
+}
+
+.container .social {
+    grid-area: social;
+}
+
+.social {
+    color: white;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-right: 10rem;
+}
+
+.social ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+.social li {
+    padding-left: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-right: 1rem;
+}
+
+.circle {
+    margin: 8px;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding-top: 8px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+footer {
+    grid-area: footer;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.attribution a {
+    color: white;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+
+/* Media queries */
+
+@media screen and (max-width:768px) {
+    body {
+        font-family: 'Open Sans', sans-serif;
+        background-image: url('images/bg-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: var(--Violet);
+        height: 100vh;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: "logo" "mockups" "text-area" "social" "footer";
+    }
+    .container .logo {
+        grid-area: logo;
+        margin-top: 1rem;
+        margin-left: 1.5rem;
+    }
+    .container .logo-top {
+        margin: 1rem 0;
+        width: 9rem;
+    }
+    .container .mockups {
+        grid-area: mockups;
+        justify-content: center;
+        margin-top: 1.5rem;
+        padding: 0 2rem;
+        margin-bottom: 3rem;
+    }
+    .container .text {
+        grid-area: text-area;
+        margin-left: 0;
+    }
+    .text h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+    }
+    .text p {
+        text-align: center;
+        margin: 1rem 1.5rem;
+        font-size: 1rem;
+        padding-right: 0;
+    }
+    .container .mockup {
+        width: 100%;
+    }
+    .btn {
+        display: flex;
+        background-color: white;
+        color: var(--Violet);
+        border-style: none;
+        margin: 1rem .8rem .5rem;
+        padding: .7rem 4rem;
+        border-radius: 50px;
+        font-size: 1rem;
+        box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .social {
+        /* grid-area: social; */
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        margin-right: 0;
+    }
+    .social ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+    }
+    .social li {
+        padding: .5rem .5rem;
+    }
+    .circle {
+        margin: 5px;
+        border: 1px solid white;
+        border-radius: 50%;
+        padding-top: 6px;
+        height: 35px;
+        width: 35px;
+        text-align: center;
+    }
+    /* footer */
+    footer {
+        grid-area: footer;
+        margin-top: .8rem;
+    }
+}
